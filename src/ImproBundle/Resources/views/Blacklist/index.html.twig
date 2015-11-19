@@ -1,0 +1,19 @@
+<h1>Blacklist</h1>
+<table>
+    <tr>
+        <th>name</th>
+        <th>category</th>
+        <th>date created</th>
+        <th>active</th>
+        <th>definition</th>
+    </tr>
+    {% for word in words %}
+        <tr>
+            <td>{{ word.word.name|e }}</td>
+            <td>{{ word.word.category|e }}</td>
+            <td>{{ word.dateCreated|date('Y-m-d Y:i:s') }}</td>
+            <td>{{ word.active }}</td>
+            <td>{{ word.word.definition }}</td>
+        </tr>
+    {% endfor %}
+</table>

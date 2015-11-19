@@ -1,0 +1,25 @@
+security:
+    providers:
+        in_memory:
+            memory:
+                users:
+                    nans: { password: abasedepowpowpow, roles: 'ROLE_ADMIN' }
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        secured_area:
+            pattern:    ^/
+            anonymous: ~
+            http_basic:
+                realm: "Secured Demo Area"
+        default:
+            anonymous: ~
+
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+
+    access_control:
+        - { path: ^/, roles: ROLE_ADMIN }
+

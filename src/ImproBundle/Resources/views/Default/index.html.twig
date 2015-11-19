@@ -1,0 +1,6 @@
+<h1>Improoooo</h1>
+<ul>
+    {% for word in words %}
+        <li><b>{{ word.name|e }}</b>, <i>{{ word.category|e }}</i> : {{ word.definition|e }}</li>
+    {% endfor %}
+</ul>
